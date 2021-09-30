@@ -1,0 +1,17 @@
+// Core Files
+@import '~bootstrap/scss/functions';
+@import '~bootstrap/scss/variables';
+@import 'variables';
+@import '~bootstrap/scss/mixins';
+@import '~bootstrap/scss/bootstrap';
+//@import '~bootstrap';
+//@import '~bootstrap-vue/src/index.scss';
+
+// Structure
+@import 'global';
+@import 'variables';
+
+// Components
+@import 'custom/components/header';
+@import 'custom/components/footer';
+@import 'custom/components/navbar';
