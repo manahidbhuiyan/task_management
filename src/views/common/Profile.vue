@@ -4,6 +4,7 @@
     <navbar />
     <sidebar />
 
+    <h3 class="text-center  py-3">Update your Profile</h3>
 
   <div class="box login">
    <div class="row">
@@ -72,8 +73,10 @@
      </div>
    </div>
 
-    <button class="btn btn-dark btn-cancel">Cancel</button>
-    <button type="submit" @click="update_profile" class="btn btn-primary btn-done ">Save Change</button>
+    <div class="profile-btn">
+      <button class="btn btn-dark btn-cancel">Cancel</button>
+      <button type="submit" @click="update_profile" class="btn btn-primary btn-done ">Save Change</button>
+    </div>
   </div>
 <Footer></Footer>
   </div>
@@ -225,7 +228,10 @@ input[type="number"]:focus{
   transition: 0.2s ease;
   margin: 0 auto 20px;
 }
-
+.profile-btn{
+  display: flex;
+  justify-content: space-around;
+}
 button{
   border: 1px solid black;
   color: white;
@@ -244,30 +250,31 @@ button:focus{
   box-shadow: none;
 }
 
-.btn-cancel{
-  float: left;
-  margin: 10px 0 0 18.2%;
+/*.btn-cancel{*/
+/*  float: left;*/
+/*  margin: 10px 0 0 18.2%;*/
 
-}
+/*}*/
 
-.btn-done{
-  float: right;
-  margin: 10px 18.2% 0 0;
+/*.btn-done{*/
+/*  float: right;*/
+/*  margin: 10px 18.2% 0 0;*/
 
-}
+/*}*/
 
 
 @media (min-width:992px) and (max-width:1199.98px){
 
-
+  button{
+    width: 250px;
+  }
 }
 
 @media (min-width:768px) and (max-width:991.98px){
   .box {
     max-width: 100%;
     margin: 0px;
-    padding: 0px;
-
+    padding: 20px 0;
   }
 }
 
@@ -281,6 +288,10 @@ button:focus{
   .input_field .textarea{
     width: 90%;
   }
+  .profile-btn{
+    flex-direction: column;
+    text-align: center;
+  }
 
 }
 
@@ -289,11 +300,21 @@ button:focus{
   .box {
     max-width: 100%;
     margin: 0px;
-    padding: 0px;
+    padding: 10px 0;
   }
   .input_field .textarea{
     width: 90%;
   }
+  .profile-btn{
+    flex-direction: column;
+    text-align: center;
+    margin-left: 50%;
+    transform: translateX(-50%);
+  }
+  button{
+    width: 200px;
+    margin-bottom: 10px;
 
+  }
 }
 </style>

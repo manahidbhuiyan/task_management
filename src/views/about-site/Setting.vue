@@ -1,18 +1,18 @@
 <template>
 <div class="py-3">
   <div class="top-bar">
-    <li class="list-item">Setting</li>
+    <li class="list-item" @click="scrollToSetting">Setting</li>
     <li class="list-item" @click="scrollToElement">Privacy</li>
     <li class="list-item" @click="scrollToTearms">Tearms & Conditions</li>
   </div>
-
+  <div class="container">
 <!--  Privacy section-->
-  <section id="general">
-    <div class="container">
+  <section id="general" ref="scrollToSetting">
       <h2 class="head pb-2"><b>Notification</b></h2>
-      <p>Notification off</p>
-      <div id="dark-btn"  >
-        <span @click="hover" v-bind:class="{'darkbtnon' : isactive}"></span>
+    <div class="notifi-btn">
+      <p>You want to off Notification </p>
+      <div id="dark-btn"  @click="hover" v-bind:class="{'darkbtnon' : isactive}">
+        <span ></span>
       </div>
     </div>
 
@@ -21,7 +21,6 @@
 
 
   <section id="privacy" ref="scrollToMe">
-    <div class="container">
       <h2 class="head pb-2"><b>Privacy & Policy</b></h2>
       <h3 class="mb-2">TaskManagement User Privacy & Policy</h3>
       <small >
@@ -306,13 +305,12 @@
 
         This Privacy Policy was created for TaskManagement.com by PolicyMaker.io on 2021-12-01.
       </small>
-    </div>
   </section>
 
 <!--  Tearms & Conditins-->
 
   <section id="tearms" ref="scrolltotearms">
-    <div class="container">
+
       <h2 class="head pb-2"><b>Terms & Conditions</b></h2>
       <h3 class="pb-1">TaskManagement User Terms of Service</h3>
       <small>
@@ -418,8 +416,9 @@
       <p><b>12.4. </b>Notices. We may deliver notice to you by e-mail, posting a notice on the Service and Websites or any other method we choose and such notice will be effective on dispatch. If you give notice to us, it will be effective when received and you must use the following physical or email address: (1) TaskManagement, Inc. 633 Folsom Street Suite 100, San Francisco, CA 94107-3600; or (2) terms-questions@TaskManagement.com.
       </p>
 
-    </div>
   </section>
+
+  </div>
 
 </div>
 </template>
@@ -437,6 +436,7 @@ name: "Setting",
   mounted() {
     this.scrollToElement();
     this.scrollToTearms();
+    this.scrollToSetting();
   },
   methods: {
     scrollToElement() {
@@ -450,6 +450,15 @@ name: "Setting",
       // else{
       //   this.el = this.$refs.scrollToMe[0];
       // }
+    },
+    scrollToSetting() {
+      const el = this.$refs.scrollToSetting;
+
+      if (el ) {
+        // Use el.scrollIntoView() to instantly scroll to the element
+        el.scrollIntoView({behavior: 'smooth'});
+
+      }
     },
 
     // scrollToTearms() {
@@ -486,6 +495,7 @@ name: "Setting",
 .top-bar{
   padding: 50px;
   position: fixed;
+  z-index: 999;
 
 }
 .list-item{
@@ -516,12 +526,16 @@ name: "Setting",
   padding-left: 20px;
 }
 
-#general .container{
+#general {
   height: 50vh;
 }
-
+.notifi-btn{
+  position: relative;
+}
 #dark-btn{
-
+  position: absolute;
+  top: 0px;
+  left: 20%;
   background-color: #ccc;
   width: 45px;
   border-radius: 15px;
@@ -539,9 +553,41 @@ name: "Setting",
 }
 
 .darkbtnon{
-  margin-left: 23px;
-  background-color: #0a0a0a;
+  padding-left: 23px !important;
+  background-color: #0a0a0a !important;
   transition: 0.5s;
+}
+
+
+@media (min-width: 992px)and (max-width: 1200px) {
+  .top-bar{
+    padding: 30px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    border-bottom: 1px solid black;
+    border-right: none;
+    background-color: white;
+    margin-top: -18px;
+  }
+  .list-item{
+    list-style: none;
+    height: 35px;
+    padding: 5px;
+    border-radius: 10px;
+    margin-right: 10px;
+    border: 1px solid black;
+    cursor: pointer;
+  }
+  #privacy{
+    margin: 120px 0 30px 0;
+  }
+  #general{
+    margin-top: 90px;
+  }
+  #dark-btn{
+    left: 40%;
+  }
 }
 
 @media (min-width:576px)and (max-width:991px){
@@ -567,6 +613,9 @@ name: "Setting",
   #privacy{
     margin: 120px 0 30px 0;
   }
+  #dark-btn{
+    left: 40%;
+  }
 }
 @media  (max-width: 576px){
   .top-bar{
@@ -590,6 +639,12 @@ name: "Setting",
   }
   #privacy{
     margin: 60px 0 30px 0;
+  }
+  #dark-btn{
+    left: 80% ;
+  }
+  #general{
+    margin-top: 50px;
   }
 }
 </style>
