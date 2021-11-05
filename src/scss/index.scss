@@ -10,8 +10,38 @@
 // Structure
 @import 'global';
 @import 'variables';
+@import "functions";
+@import "mixin";
 
 // Components
 @import 'custom/components/header';
 @import 'custom/components/footer';
 @import 'custom/components/navbar';
+
+// Pages
+
+@import 'custom/pages/about-site/about';
+@import 'custom/pages/about-site/privacy';
+@import 'custom/pages/about-site/setting';
+@import 'custom/pages/about-site/tearms';
+
+@import 'custom/pages/common/createTask';
+@import 'custom/pages/common/massage_box';
+@import 'custom/pages/common/notifications';
+@import 'custom/pages/common/profile';
+@import 'custom/pages/common/teams';
+
+@import 'custom/pages/Dashboard/dashboard';
+@import 'custom/pages/Dashboard/headDashboard';
+@import 'custom/pages/Dashboard/leadDashboard';
+
+@import 'custom/pages/Notofications/allNotifications';
+@import 'custom/pages/Notofications/new_notifications';
+
+@import 'custom/pages/register/forgot_pass';
+@import 'custom/pages/register/login';
+@import 'custom/pages/register/signup';
+@import 'custom/pages/register/tasklist';
+@import 'custom/pages/register/taskdevide';
+
+

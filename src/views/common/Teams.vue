@@ -2,170 +2,233 @@
   <div>
     <navbar></navbar>
     <sidebar></sidebar>
-<div class="container">
-
-
-  <div class="profesional-profile">
-    <div class="row no-gutters">
-      <div class="col-sm-12 col-md-3">
-        <div class="pro-profile">
-          <h3>Professional Profile</h3>
-          <hr>
-          <img class="img img-fluid employee_img" src="../../assets/demo.png" alt="IMG">
-          <div class="pro-text">
-            <p><b>Employee Name : </b> {{ employee }}</p>
-            <p> <b>Designation : </b> {{ designation }}</p>
-            <p><b>Department Name : </b> {{ department }}</p>
-            <p> <b>Email : </b> {{ email }}</p>
+    <div class="container">
+      <div class="profesional-profile">
+        <div class="row no-gutters">
+          <div class="col-sm-12 col-md-3">
+            <div class="pro-profile">
+              <h3>Professional Profile</h3>
+              <hr />
+              <img
+                class="img img-fluid employee_img"
+                src="../../assets/demo.png"
+                alt="IMG"
+              />
+              <div class="pro-text">
+                <p><b>Employee Name : </b> {{ employee }}</p>
+                <p><b>Designation : </b> {{ designation }}</p>
+                <p><b>Department Name : </b> {{ department }}</p>
+                <p><b>Email : </b> {{ email }}</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-1"></div>
+          <div class="col-sm-12 col-md-8">
+            <div class="my-site">
+              <h3>About Me</h3>
+              <hr />
+              <div class="row no-gutters">
+                <div class="col-sm-12 col-md-6">
+                  <p><b>Name : </b> Mahabub Alam</p>
+                  <p><b>Age : </b> 24</p>
+                  <p><b>Email : </b> ma.nahid960@gmail.com</p>
+                  <p><b>Phone : </b> 01834960466</p>
+                </div>
+                <div class="col-sm-12 col-md-6">
+                  <p><b>Location : </b> Uttara , Dhaka</p>
+                  <p><b>Degree : </b> BSc</p>
+                  <p><b>Experience : </b>5 years</p>
+                  <p><b>Website : </b></p>
+                </div>
+              </div>
+              <div class="my-bio">
+                <h3>Junior Developer</h3>
+                <hr />
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                  Accusamus dolorem dolores dolorum, enim, esse eveniet harum
+                  ipsa laudantium officiis quas qui repellendus veniam vero.
+                  Animi fuga quia ut vero voluptates.
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-      <div class="col-sm-1"></div>
-      <div class="col-sm-12 col-md-8">
-        <div class="my-site">
-          <h3>About me</h3>
-          <hr>
-          <div class="row no-gutters">
-            <div class="col-sm-12 col-md-6">
-              <p><b>Name : </b> Mahabub Alam</p>
-              <p><b>Age : </b> 24</p>
-              <p><b>Email : </b> ma.nahid960@gmail.com</p>
-              <p><b>Phone : </b> 01834960466</p>
-            </div>
-            <div class="col-sm-12 col-md-6">
-              <p><b>Location : </b> Uttara , Dhaka</p>
-              <p><b>Degree : </b> BSc </p>
-              <p><b>Experience : </b>5 years</p>
-              <p><b>Website : </b></p>
-            </div>
-          </div>
-          <div class="my-bio">
-            <h3>Junior Developer</h3>
-            <hr>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus dolorem dolores dolorum, enim, esse eveniet harum ipsa laudantium officiis quas qui repellendus veniam vero. Animi fuga quia ut vero voluptates.</p>
-          </div>
-        </div>
 
+      <div class="team">
+        <h3>My Teams</h3>
+        <hr />
+        <div class="accordion" role="tablist">
+          <b-card no-body class="mb-1">
+            <b-card-header header-tag="header" class="p-1" role="tab">
+              <!--        <b-button block v-b-toggle.accordion-1 variant="info">Accordion 1</b-button>-->
+
+              <div class="row team-list">
+                <div class="col-md-9">
+                  <h3>Team Name : {{ teamname_1 }}</h3>
+                  <p>Team Member : {{ teammember_1 }}</p>
+                </div>
+                <div class="col-md-3">
+                  <p>Department : Web</p>
+                  <button
+                    type="button"
+                    block
+                    v-b-toggle.accordion-3
+                    class="btn common-btn"
+                  >
+                    View Details
+                  </button>
+                </div>
+              </div>
+            </b-card-header>
+
+            <b-collapse
+              id="accordion-3"
+              accordion="my-accordion"
+              role="tabpanel"
+            >
+              <b-card-body>
+                <b-card-text>
+                  <div class="row">
+                    <div class="col-md-9">
+                      <h3>Team Name : {{ teamname_1 }}</h3>
+                    </div>
+                    <div class="col-md-3">
+                      Total Member : {{ teammember_1 }}
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-6">Ishita khanom</div>
+                    <div class="col-md-3">Employee</div>
+                    <div class="col-md-3">
+                      <div class="acc-btn">
+                        <button
+                          type="button"
+                          block
+                          v-b-toggle.accordion-4
+                          class="btn common-btn"
+                        >
+                          View Details
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                  <hr />
+                  <div class="row">
+                    <div class="col-md-6">Masudur Rahamn</div>
+                    <div class="col-md-3">Senior Officer</div>
+                    <div class="col-md-3">
+                      <div class="acc-btn">
+                        <button
+                          type="button"
+                          block
+                          v-b-toggle.accordion-4
+                          class="btn common-btn"
+                        >
+                          View Details
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                  <hr />
+                  <div class="row">
+                    <div class="col-md-6">Parbin Sultana</div>
+                    <div class="col-md-3">Jusnior Officer</div>
+                    <div class="col-md-3">
+                      <div class="acc-btn">
+                        <button
+                          type="button"
+                          block
+                          v-b-toggle.accordion-4
+                          class="btn common-btn"
+                        >
+                          View Details
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                  <hr />
+                  <div class="row">
+                    <div class="col-md-6">Sadekur Rahman</div>
+                    <div class="col-md-3">Employee</div>
+                    <div class="col-md-3">
+                      <div class="acc-btn">
+                        <button
+                          type="button"
+                          block
+                          v-b-toggle.accordion-4
+                          class="btn common-btn"
+                        >
+                          View Details
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </b-card-text>
+              </b-card-body>
+            </b-collapse>
+
+            <b-collapse
+              id="accordion-4"
+              accordion="my-accordion"
+              role="tabpanel"
+            >
+              <b-card-body>
+                <b-card-text>
+                  <div class="row">
+                    <div class="col-md-6">
+                      <div class="employee-profile">
+                        <div class="other-employee">
+                          <img
+                            class="img img-fluid "
+                            src="../../assets/demo.png"
+                            alt="IMG"
+                          />
+                        </div>
+                        <div class="div">
+                          <h5>{{ employee }}</h5>
+                          <h6>{{ designation }}</h6>
+                        </div>
+                      </div>
+                      <br />
+                      <h3>Total task List :</h3>
+
+                      <div class="task-list">
+                        <li>
+                          Create One Landing page --
+                          <span>{{ currentDate() }}</span>
+                        </li>
+                        <li>
+                          Give Update about web design --
+                          <span>{{ currentDate() }}</span>
+                        </li>
+                        <li>
+                          Complete sass tutorial --
+                          <span>{{ currentDate() }}</span>
+                        </li>
+                      </div>
+                    </div>
+
+                    <div class="col-md-6">
+                      <div class="pie">
+                        <pie-chart
+                          :legend="legend"
+                          :data="chartData"
+                          :options="chartOptions"
+                        ></pie-chart>
+                      </div>
+                    </div>
+                  </div>
+                </b-card-text>
+              </b-card-body>
+            </b-collapse>
+          </b-card>
+        </div>
       </div>
     </div>
-  </div>
-
-
-  <div class="team">
-    <h3>My Teams</h3>
-    <hr>
-    <div class="accordion" role="tablist">
-      <b-card no-body class="mb-1">
-        <b-card-header header-tag="header" class="p-1" role="tab">
-          <!--        <b-button block v-b-toggle.accordion-1 variant="info">Accordion 1</b-button>-->
-
-          <div class="row team-list" >
-
-            <div class="col-md-9">
-              <h3>Team Name : {{ teamname_1 }}</h3>
-              <p>Team Member : {{ teammember_1 }}</p>
-            </div>
-            <div class="col-md-3">
-              <p>Department : Web</p>
-              <button type="button"  block v-b-toggle.accordion-3 variant="info" class="btn btn-primary">View Details</button>
-            </div>
-          </div>
-        </b-card-header>
-
-
-        <b-collapse id="accordion-3" accordion="my-accordion" role="tabpanel">
-          <b-card-body>
-            <b-card-text>
-              <div class="row">
-                <div class="col-md-9">  <h3>Team Name : {{ teamname_1 }}</h3></div>
-                <div class="col-md-3">Total Member : {{ teammember_1 }}</div>
-              </div>
-              <div class="row">
-                <div class="col-md-6">Ishita khanom</div>
-                <div class="col-md-3">Employee</div>
-                <div class="col-md-3">
-                  <div class="acc-btn">
-                    <button type="button"  block v-b-toggle.accordion-4 variant="info" class="btn btn-primary">View Details</button>
-                  </div>
-                </div>
-              </div>
-              <hr>
-              <div class="row">
-                <div class="col-md-6">Masudur Rahamn</div>
-                <div class="col-md-3">Senior Officer</div>
-                <div class="col-md-3">
-                  <div class="acc-btn">
-                    <button type="button"  block v-b-toggle.accordion-4 variant="info" class="btn btn-primary">View Details</button>
-                  </div>
-                </div>
-              </div>
-              <hr>
-              <div class="row">
-                <div class="col-md-6">Parbin Sultana</div>
-                <div class="col-md-3">Jusnior Officer</div>
-                <div class="col-md-3">
-                  <div class="acc-btn">
-                    <button type="button"  block v-b-toggle.accordion-4 variant="info" class="btn btn-primary">View Details</button>
-                  </div>
-                </div>
-              </div>
-              <hr>
-              <div class="row">
-                <div class="col-md-6">Sadekur Rahman</div>
-                <div class="col-md-3">Employee</div>
-                <div class="col-md-3">
-                  <div class="acc-btn">
-                    <button type="button"  block v-b-toggle.accordion-4 variant="info" class="btn btn-primary">View Details</button>
-                  </div>
-                </div>
-              </div>
-
-
-            </b-card-text>
-          </b-card-body>
-        </b-collapse>
-
-        <b-collapse id="accordion-4" accordion="my-accordion" role="tabpanel">
-          <b-card-body>
-            <b-card-text>
-              <div class="row">
-                <div class="col-md-6">
-                 <div class="employee-profile">
-                   <div class="other-employee">
-                     <img class="img img-fluid " src="../../assets/demo.png" alt="IMG">
-                   </div>
-                   <div class="div">
-                     <h6> {{ employee }} </h6>
-                     <h6> {{ designation }} </h6>
-                   </div>
-                 </div>
-                  <br>
-                  <p>Total task List : </p>
-                  <div class="task-list">
-                    <li>Create One Landing page -- <span>{{ currentDate() }}</span></li>
-                    <li>Give Update about web design -- <span>{{ currentDate() }}</span></li>
-                    <li>Complete sass tutorial -- <span>{{ currentDate() }}</span></li>
-                  </div>
-                </div>
-
-                <div class="col-md-6">
-
-                  <div class="pie">
-                    <pie-chart :legend="legend" :data="chartData" :options="chartOptions"></pie-chart>
-                  </div>
-                </div>
-
-              </div>
-            </b-card-text>
-          </b-card-body>
-        </b-collapse>
-      </b-card>
-    </div>
-
-  </div>
-</div>
     <Footer></Footer>
-</div>
+  </div>
 </template>
 
 <script>
@@ -175,24 +238,20 @@ import PieChart from "../chart/PieChart";
 import Footer from "../../components/Footer";
 export default {
   name: "Teams",
-  components: {Sidebar,
-    Navbar,
-    PieChart,
-    Footer
-  },
-  data(){
-    return{
-      company_name : "The IT Group",
-      employee : "Mahabub Alam",
-      designation : "Junior Developer",
+  components: { Sidebar, Navbar, PieChart, Footer },
+  data() {
+    return {
+      company_name: "The IT Group",
+      employee: "Mahabub Alam",
+      designation: "Junior Developer",
       department: "Developer",
       teammember_1: 10,
-      teamname_1:'SSTack',
+      teamname_1: "SSTack",
       chartOptions: {
-        hoverBorderWidth: 20
+        hoverBorderWidth: 20,
       },
       legend: {
-        position: 'top'
+        position: "top",
       },
       chartData: {
         hoverBackgroundColor: "red",
@@ -204,93 +263,93 @@ export default {
             backgroundColor: ["#41B883", "#00D8FF", "#E46651"],
             data: [4, 3, 2],
           },
-
-        ]
-      }
-
-    }
+        ],
+      },
+    };
   },
-  methods:{
+  methods: {
     currentDate() {
       const current = new Date();
-      const date = `${current.getDate()}/${current.getMonth()+1}/${current.getFullYear()}`;
+      const date = `${current.getDate()}/${current.getMonth() +
+        1}/${current.getFullYear()}`;
       return date;
-    }
-  }
-}
+    },
+  },
+};
 </script>
 
-<style scoped>
-.profesional-profile{
-  padding: 60px;
-  /*background: -webkit-linear-gradient(-70deg, #fa7c30 30%, rgba(0, 0, 0, 0) 30%), url('https://www.nasa.gov/sites/default/files/thumbnails/image/pia21421-cr.jpg');*/
-  /*background: -o-linear-gradient(-70deg, #fa7c30 30%, rgba(0, 0, 0, 0) 30%), url('https://www.nasa.gov/sites/default/files/thumbnails/image/pia21421-cr.jpg');*/
-  /*background: -moz-linear-gradient(-70deg, #fa7c30 30%, rgba(0, 0, 0, 0) 30%), url('https://www.nasa.gov/sites/default/files/thumbnails/image/pia21421-cr.jpg');*/
-  /*background: linear-gradient(-70deg, #fa7c30 30%, rgba(0, 0, 0, 0) 30%), url('https://www.nasa.gov/sites/default/files/thumbnails/image/pia21421-cr.jpg');*/
-  /*background-size: cover;*/
-  /*background-position: 50% 21%;*/
+<style lang="scss" scoped>
+@import "../../scss/index";
+
+p {
+  font-size: 15px;
 }
-.pro-profile{
-  margin: 50px 0 20px 0;
+
+.pro-profile {
+  margin: 50px 0;
   padding: 10px 10px;
   border: 1px solid transparent;
   background-color: white;
   box-shadow: 0px 0px 4px #444141;
-  height: 500px;
+  height: 550px;
   border-radius: 10px;
-  color: #3B3A3A;
+  color: #3b3a3a;
 }
-.pro-profile p{
+.pro-profile p {
   margin-bottom: 0;
 }
-.pro-text{
+.pro-text {
   padding: 20px 0 0 0;
 }
-.my-site{
+.my-site {
   margin: 50px 0 20px 0;
   padding: 10px 10px;
   border: 1px solid transparent;
   background-color: white;
   box-shadow: 0px 0px 4px #444141;
-  height: 500px;
+  height: 550px;
   border-radius: 10px;
-  color: #3B3A3A;
+  color: #3b3a3a;
 }
-.my-site p{
+.my-site p {
   text-align: left;
   margin-bottom: 0;
 }
-.my-bio{
+.my-bio {
   padding: 40px 0;
 }
-.team{
+
+.team {
   margin-bottom: 60px;
-  padding: 10px 5px;
+  padding: 10px 10px;
   border: 1px solid transparent;
   background-color: white;
   box-shadow: 0px 0px 4px #444141;
+  text-align: start !important;
 }
-.pie{
+.pie {
   width: 300px !important;
   height: 300px;
   margin: 0 auto;
 }
-.other-employee img{
+.other-employee img {
   width: 100px;
-  border-radius: 50%;
+  height: 100px;
+  border-radius: 100px;
 }
-.employee-profile{
+.employee-profile {
   display: flex;
-
 }
-.employee-profile .div{
+.employee-profile .div {
   padding-left: 20px;
   margin-top: 30px;
 }
+.team h5 {
+  padding: 0;
+}
 
-
-@media (min-width:767.8px)and (max-width:991px){
-  .pie{
+@media (min-width: 767.8px) and (max-width: 991px) {
+  .pie {
     width: 250px !important;
     margin: 0 auto;
     height: 250px !important;

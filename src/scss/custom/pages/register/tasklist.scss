@@ -1,0 +1,68 @@
+
+.tasklist{
+  margin: 60px ;
+  min-height: calc(100vh - 494px);
+}
+
+.task-mention{
+  background-color: white;
+  box-shadow: 0px 2px 4px #3B3A3A;
+}
+
+//table, th, td {
+//  border: 1px solid black;
+//  border-collapse: collapse;
+//}
+td, th{
+  padding: 10px;
+  color: #716e6e;
+}
+td p {
+  padding: 5px;
+  margin: 0px !important;
+}
+.assigne-img{
+  height: 30px;
+  width: 30px;
+  border-radius: 30px;
+  margin: 0 3px;
+}
+.task-name{
+  text-align: start !important;
+  padding-left: 20px !important;
+}
+
+.task-status{
+  width: 150px;
+}
+.priority, .status{
+  border: none;
+  cursor: pointer;
+  margin-bottom: 0px;
+  padding: 5px;
+}
+
+.priority:focus, .status:focus{
+  border: none;
+  outline: 0;
+}
+.green, .green2{
+  background-color: green;
+  font-weight: bold;
+}
+.yellow{
+  background-color: yellow;
+  font-weight: bold;
+}
+.red, .red2{
+  background-color: red;
+  font-weight: bold;
+}
+.blue{
+  background-color: #37a7e3;
+  font-weight: bold;
+}
+.normal, .normal2{
+  background-color: white;
+  font-weight: normal;
+}

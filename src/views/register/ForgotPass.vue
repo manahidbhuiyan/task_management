@@ -46,46 +46,7 @@ name: "ForgotPass",
 
 <style lang="scss">
 
-body {
-  //background: linear-gradient(-135deg,#c850c0,#4158d0);
-  //background-color: rgba(0, 0, 0, 0);
-  background-position-x: 0%;
-  background-position-y: 0%;
-  background-repeat: no-repeat;
-  background-attachment: scroll;
-  //  background-image: linear-gradient(-135deg, rgb(200, 80, 192), rgb(65, 88, 208));
-  //  background: linear-gradient(-135deg,#c850c0,#4158d0)
+@import '../../scss/index';
 
-}
-.forgotpass{
-  background-color: white;
-  height: 392px;
-  padding: 105px 50px;
-  border-top-right-radius: 15px;
-  border-bottom-right-radius: 15px;
-}
-.forgotpic img{
-  height: 392px;
-  border-top-left-radius: 15px;
-  border-bottom-left-radius: 15px;
-}
-.picside , .formside{
-  padding: 0px !important;
-}
-
-//Responsive
-
-@media (min-width:576px)and (max-width:991px) {
-  .forgotpass {
-    padding: 80px 25px;
-    height: 380px;
-  }
-  .forgotpic img{
-   height: 380px
-  }
-
-}
-
-//
 
 </style>

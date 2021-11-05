@@ -1,0 +1,78 @@
+
+body{
+  background-color: white;
+}
+
+h1{
+  font-weight: 900;
+}
+h5{
+  font-weight: 600;
+  padding: 10px;
+  padding-bottom: 0 !important;
+  margin-bottom: 0 !important;
+}
+p{
+  font-size: 19px;
+  padding: 5px 0;
+  font-family:sans-serif;
+}
+
+.banner-write{
+  padding: 100px 20px;
+  text-align: center;
+}
+
+.banner-team{
+  padding: 100px 20px;
+}
+.team{
+  text-align: center;
+}
+.team img{
+  height: 200px;
+  width: 200px;
+  background-color: whitesmoke;
+  padding-right:10px ;
+}
+.team h5{
+  padding-top: 5px;
+}
+
+/* mission area start */
+
+/*#mission{*/
+/*  padding: 40px 0;*/
+/*}*/
+.mission{
+  padding: 100px 20px;
+  text-align: center;
+  background-color: white !important;
+}
+
+.value{
+  padding: 100px 20px;
+  text-align: center;
+}
+.value img{
+  height: 80px;
+  width: 80px;
+}
+.value h1, .mission h1{
+  padding-bottom: 20px;
+}
+.box{
+  text-align: center;
+  border: 1px solid transparent;
+  width: 300px;
+  height: 300px;
+  margin: 10px auto 60px;
+  padding: 15px 5px;
+  border-radius: 10px;
+  box-shadow: 2px 2px 10px 4px whitesmoke,0px 0px 2px 2px gray;
+  word-break : inherit !important;
+  background-color: #ffffff;
+}
+.box:hover{
+  box-shadow: 2px 2px 5px gray,2px 2px 10px 5px whitesmoke;
+}

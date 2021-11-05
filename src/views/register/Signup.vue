@@ -106,27 +106,8 @@ data(){
 </script>
 
 <style lang="scss" scoped>
-.right{
-  max-width: 300px !important;
-  padding: 100px 0px;
-  margin: 0 auto;
-}
 
-.error{
-  color: red;
-}
-.leftsignup{
-  padding: 175px 0px !important;
-}
-.isActive ,.ismatch{
-  border-color: red;
-}
+@import '../../scss/index';
 
-
-@media (max-width:575.8px) {
-  .leftsignup {
-    padding: 50px 0px !important;
-  }
-}
 </style>
 

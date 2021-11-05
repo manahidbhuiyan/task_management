@@ -1,463 +1,220 @@
 <template>
-<div>
-  <navbar />
-  <sidebar />
-  <div class="headDash">
-  <div class="container">
-   <div class="row">
-     <div class="col-md-3">
-       <div>
-         <b-card>
-           <card-header>
-             Now You Can create Team and add team member
-           </card-header>
+  <div>
+    <navbar />
+    <div class="full-content">
+   <div class="side-content">
 
-         </b-card>
-         <b-button v-b-modal.modal-lg>Create Team</b-button>
-
-         <div class="modal-team">
-         <b-modal id="modal-lg" size="lg" title="New Team" hide-footer>
-
-
-  <b-form @submit.prevent="newTeam">
-    <b-form-group
-        id="form-group"
-        class="form-group"
-        label="Team Name">
-      <b-form-input
-          type="text"
-          v-model="todo.name"
-          placeholder="Team Name"
-          class="from-input"
-          required>
-      </b-form-input>
-    </b-form-group>
-
-    <b-form-group
-        id="form-group"
-        class="form-group"
-        label="About Team">
-      <b-form-textarea
-          id="textarea"
-          v-model="todo.details"
-          placeholder="Team Details"
-          class="from-input"
-          rows="3"
-          max-rows="6"
-          required>
-      </b-form-textarea>
-    </b-form-group>
-
-    <b-form-group
-        id="form-group"
-        class="form-group"
-        label="Department Name">
-      <b-form-input
-          type="text"
-          v-model="todo.department"
-          placeholder="Department Name"
-          class="from-input"
-          required>
-      </b-form-input>
-    </b-form-group>
-
-    <b-form-group
-        id="form-group"
-        class="form-group"
-        label="Team Member">
-      <div class="member">
-        <div class="row" v-for="(task,index) in todos" :key="index">
-          <div class="col-sm-6">
-            <div >
-              <h5 style="margin-top: 10px">{{ task.text }}</h5>
-            </div>
-          </div>
-          <div class="col-sm-2">
-            <h5 style="margin-top: 10px">Member</h5>
-          </div>
-          <div class="col-sm-4">
+   </div>
+    <div class="main-content withoutsidebar" >
+    <div class="headDash">
+        <div class="row">
+          <div class="col-sm-3">
             <div>
-              <b-dropdown id="dropdown-right" right text="Right align" variant="primary" class="btn btn-sm">
-                <b-dropdown-item href="#">Assign Leader</b-dropdown-item>
-                <b-dropdown-item href="#">Remove Leader</b-dropdown-item>
-              </b-dropdown>
+              <b-card title="Total Team" sub-title="0">
+                <b-card-text>Task Count</b-card-text>
+              </b-card>
             </div>
           </div>
-          <hr>
+          <div class="col-sm-3">
+            <b-card title="Project Team" sub-title="0">
+              <b-card-text>Task Count</b-card-text>
+            </b-card>
+          </div>
+          <div class="col-sm-3">
+            <b-card title="Task Progress" sub-title="0">
+              <b-card-text>Task Count</b-card-text>
+            </b-card>
+          </div>
+          <div class="col-sm-3">
+            <b-card title="Complete Task" sub-title="0">
+              <b-card-text>Task Count</b-card-text>
+            </b-card>
+          </div>
         </div>
 
-      </div>
+        <!--        Chart cHart Area Start-->
 
-
-      <div class="add-team-member">
-        <b-form-input
-            class="member-add-box"
-            type="text"
-            placeholder="Add Member"
-            v-model="member.text"
-        >
-        </b-form-input>
-        <button @click="memberadd" class="btn btn-primary" type="button">Add Member</button>
-      </div>
-
-    </b-form-group>
-    <button class="btn btn-success" type="submit">Submit</button>
-
-  </b-form>
-
-         </b-modal>
-         </div>
-       </div>
-     </div>
-     <div class="col-md-9">
-
-<button type="button" class="btn btn-primary mb-3">Latest Team ></button>
-     <div v-for="(nteam,index) in teams" :key="index" class="accordion" role="tablist">
-       <b-card no-body class="mb-1">
-         <b-card-header  header-tag="header" class="p-1" role="tab">
-           <div class="row" >
-             <div class="col-md-8">
-               <h3>Team Name : {{ nteam.name }}</h3>
-               <p>Team Member : {{ teammember_1 }}</p>
-             </div>
-             <div class="col-md-4">
-               <p>Department : {{ nteam.department }}</p>
-               <button type="button"  block v-b-toggle.accordion-3 variant="info" class="btn btn-primary">View Details</button>
-             </div>
-           </div>
-         </b-card-header>
-
-
-         <b-collapse id="accordion-3" accordion="my-accordion" role="tabpanel">
-           <b-card-body>
-             <b-card-text>
-               <div class="row" >
-                 <div class="col-md-8">
-                   <h3>Team Name : {{ nteam.name }}</h3>
-                   <p>Team Details : {{ nteam.details }} </p>
-                 </div>
-                 <div class="col-md-4">Total Member : {{ teammember_1 }}</div>
-               </div>
-               <div class="row">
-                 <div class="col-md-6">Ishita khanom</div>
-                 <div class="col-md-3">Employee</div>
-                 <div class="col-md-3">
-                   <div class="acc-btn">
-                     <button type="button"  block v-b-toggle.accordion-4 variant="info" class="btn btn-primary">View Details</button>
-                   </div>
-                 </div>
-               </div>
-               <hr>
-               <div class="row">
-                 <div class="col-md-6">Masudur Rahamn</div>
-                 <div class="col-md-3">Senior Officer</div>
-                 <div class="col-md-3">
-                   <div class="acc-btn">
-                     <button type="button"  block v-b-toggle.accordion-4 variant="info" class="btn btn-primary">View Details</button>
-                   </div>
-                 </div>
-               </div>
-               <hr>
-               <div class="row">
-                 <div class="col-md-6">Parbin Sultana</div>
-                 <div class="col-md-3">Jusnior Officer</div>
-                 <div class="col-md-3">
-                   <div class="acc-btn">
-                     <button type="button"  block v-b-toggle.accordion-4 variant="info" class="btn btn-primary">View Details</button>
-                   </div>
-                 </div>
-               </div>
-               <hr>
-               <div class="row">
-                 <div class="col-md-6">Sadekur Rahman</div>
-                 <div class="col-md-3">Employee</div>
-                 <div class="col-md-3">
-                   <div class="acc-btn">
-                     <button type="button"  block v-b-toggle.accordion-4 variant="info" class="btn btn-primary">View Details</button>
-                   </div>
-                 </div>
-               </div>
-
-
-             </b-card-text>
-           </b-card-body>
-         </b-collapse>
-
-         <b-collapse id="accordion-4" accordion="my-accordion" role="tabpanel">
-           <b-card-body>
-             <b-card-text>
-               <div class="row">
-                 <div class="col-md-6">
-                   <p>Total task List : </p>
-                   <div class="task-list">
-                     <li>Create One Landing page -- <span>{{ currentDate() }}</span></li>
-                     <li>Give Update about web design -- <span>{{ currentDate() }}</span></li>
-                     <li>Complete sass tutorial -- <span>{{ currentDate() }}</span></li>
-                   </div>
-                 </div>
-
-                 <div class="col-md-6">
-
-                   <div class="pie">
-                     <pie-chart :legend="legend" :data="chartData" :options="chartOptions"></pie-chart>
-                   </div>
-                 </div>
-
-               </div>
-             </b-card-text>
-           </b-card-body>
-         </b-collapse>
-       </b-card>
-     </div>
-
-
-     </div>
-
-   </div>
-   </div>
-  </div>
-
-  <div class="container">
-
-    <div class="all-team">
-      <h3>All Teams List</h3>
-      <div class="no-team" v-if="no_team">
-        <p>You Have no team right Now</p>
-      </div>
-      <div v-for="(nteam,index) in teams" :key="index" class="accordion mb-3" role="tablist">
-        <b-card no-body class="mb-1">
-          <b-card-header  header-tag="header" class="p-1" role="tab">
-            <!--        <b-button block v-b-toggle.accordion-1 variant="info">Accordion 1</b-button>-->
-
-            <div class="row" >
-              <div class="col-md-8">
-                <h3>Team Name : {{ nteam.name }}</h3>
-                <p>Team Member : {{ teammember_1 }}</p>
-              </div>
-              <div class="col-md-4">
-                <p>Department : {{ nteam.department }}</p>
-                <button type="button"  block v-b-toggle.accordion-3 variant="info" class="btn btn-primary">View Details</button>
+        <div class="row">
+          <div class="col-lg-8 col-md-6 col-sm-12">
+            <h3 class="team-table-head"><b>Employee count by team</b></h3>
+            <div class="bar-area">
+              <BarChart2 />
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 col-sm-12">
+            <h3 class="team-table-head"><b>Project servey</b></h3>
+            <div class="pie-area">
+              <div class="pie">
+                <pie-chart
+                    :legend="legend"
+                    :data="chartData"
+                    :options="chartOptions"
+                ></pie-chart>
               </div>
             </div>
-          </b-card-header>
+          </div>
+        </div>
+        <!--        Chart cHart Area Stop-->
 
 
-          <b-collapse id="accordion-3" accordion="my-accordion" role="tabpanel" >
-            <b-card-body>
-              <b-card-text>
-                <div class="row" >
-                  <div class="col-md-8">
-                    <h3>Team Name : {{ nteam.name }}</h3>
-                    <p>Team Details : {{ nteam.details }} </p>
-                  </div>
-                  <div class="col-md-4">Total Member : {{ teammember_1 }}</div>
-                </div>
-                <div class="row">
-                  <div class="col-md-6">Ishita khanom</div>
-                  <div class="col-md-3">Employee</div>
-                  <div class="col-md-3">
-                    <div class="acc-btn">
-                      <button type="button"  block v-b-toggle.accordion-4 variant="info" class="btn btn-primary">View Details</button>
-                    </div>
-                  </div>
-                </div>
-                <hr>
-                <div class="row">
-                  <div class="col-md-6">Masudur Rahamn</div>
-                  <div class="col-md-3">Senior Officer</div>
-                  <div class="col-md-3">
-                    <div class="acc-btn">
-                      <button type="button"  block v-b-toggle.accordion-4 variant="info" class="btn btn-primary">View Details</button>
-                    </div>
-                  </div>
-                </div>
-                <hr>
-                <div class="row">
-                  <div class="col-md-6">Parbin Sultana</div>
-                  <div class="col-md-3">Jusnior Officer</div>
-                  <div class="col-md-3">
-                    <div class="acc-btn">
-                      <button type="button"  block v-b-toggle.accordion-4 variant="info" class="btn btn-primary">View Details</button>
-                    </div>
-                  </div>
-                </div>
-                <hr>
-                <div class="row">
-                  <div class="col-md-6">Sadekur Rahman</div>
-                  <div class="col-md-3">Employee</div>
-                  <div class="col-md-3">
-                    <div class="acc-btn">
-                      <button type="button"  block v-b-toggle.accordion-4 variant="info" class="btn btn-primary">View Details</button>
-                    </div>
-                  </div>
-                </div>
 
+    <!--    Style 2-->
 
-              </b-card-text>
-            </b-card-body>
-          </b-collapse>
-
-          <b-collapse id="accordion-4" accordion="my-accordion" role="tabpanel">
-            <b-card-body>
-              <b-card-text>
-                <div class="row">
-                  <div class="col-md-6">
-                    <p>Total task List : </p>
-                    <div class="task-list">
-                      <li>Create One Landing page -- <span>{{ currentDate() }}</span></li>
-                      <li>Give Update about web design -- <span>{{ currentDate() }}</span></li>
-                      <li>Complete sass tutorial -- <span>{{ currentDate() }}</span></li>
-                    </div>
-                  </div>
-
-                  <div class="col-md-6">
-
-                    <div class="pie">
-                      <pie-chart :legend="legend" :data="chartData" :options="chartOptions"></pie-chart>
-                    </div>
-                  </div>
-
-                </div>
-              </b-card-text>
-            </b-card-body>
-          </b-collapse>
-        </b-card>
-      </div>
+    <!--    Project creat area stop-->
     </div>
+        </div>
+    </div>
+    <Footer></Footer>
   </div>
-<Footer></Footer>
-</div>
 </template>
 
 <script>
 import Navbar from "../../components/navbar";
-import Sidebar from "../../components/Sidebar";
-import PieChart from "../chart/PieChart";
+// import Sidebar from "../../components/Sidebar";
 import Footer from "../../components/Footer";
+import BarChart2 from "../chart/BarChart2";
+import PieChart from "../chart/PieChart";
 export default {
   name: "HeadDashBoard",
   components: {
-    Sidebar,
+
     Navbar,
+    Footer,
     PieChart,
-    Footer
+    BarChart2,
   },
 
-  data: function data(){
-    return{
-      teammember: 12,
-      teamname:'Web Hunter',
-      teammember_1: 10,
-      teamname_1:'SSTack',
-      no_team : true,
-      todo: {
-        name:'',
-        details:'',
-        department:'',
-      },
-      member:{
-        text: '',
-      },
-      todos:[],
-      teams:[],
+  data: function data() {
+    return {
+
+      // green2: false,
+      // red2: false,
+      // normal2: false,
+      // blue: false,
+      ishide:false,
+      isfull:false,
       chartOptions: {
         hoverBorderWidth: 20
       },
       legend: {
-        position: 'top'
+        position: "top",
       },
       chartData: {
         hoverBackgroundColor: "red",
         hoverBorderWidth: 10,
-        labels: ["Complete", "Pending", "Overdue"],
+        labels: ["Complete", "Progress"],
         datasets: [
           {
             label: "Data ",
-            backgroundColor: ["#41B883", "#00D8FF", "#E46651"],
-            data: [4, 3, 2],
+            backgroundColor: ["#41B883", "#00D8FF"],
+            data: [9, 3],
           },
+        ],
+      },
 
-        ]
-      }
-    }
+    };
   },
-  methods:{
-    currentDate() {
-      const current = new Date();
-      const date = `${current.getDate()}/${current.getMonth()+1}/${current.getFullYear()}`;
-      return date;
-    },
-    memberadd(){
-      this.newtask = Object.assign({}, this.member)
-      this.member.text = ''
-      this.todos.push(this.newtask);
-      console.log(this.todos)
-    },
-    newTeam(){
-      this.team = Object.assign({}, this.todo)
-      this.todo.name = ''
-      this.todo.details = ''
-      this.todo.department = ''
-      this.teams.push(this.team);
-      this.no_team = false
+  methods: {
+    // nowchange(){
+    //   this.ishide = !this.ishide
+    // }
 
-    }
-
-  }
-}
+  },
+};
 </script>
 
-<style scoped>
-.headDash{
+<style lang="scss" scoped>
+@import "../../scss/index";
+
+.sidehide{
+  display: block !important;
+
+}
+.headDash {
   padding: 100px 0;
 }
-.pie{
-  width: 300px !important;
-  margin: 0 auto;
-  height: 300px !important;
+.team-section {
+  padding: 20px 0;
 }
+.team-table-head {
+  padding: 0px;
+  margin: 30px 0 20px;
+}
+//.bar-area h3,.pie-area h3{
+//  margin-top: 30px !important;
+//}
 
-.task-list li{
-  text-decoration: none;
-  list-style: none;
-}
-b-card-text hr{
-  margin: 0px !important;
-}
+/* Card Area */
+//
+//.task-list li {
+//  text-decoration: none;
+//  list-style: none;
+//}
+//b-card-text hr {
+//  margin: 0px !important;
+//}
+//.from-input:focus {
+//  box-shadow: none !important;
+//  outline: 0 !important;
+//}
+//.create-team:focus,
+//.btn-success:focus {
+//  outline: 0 !important;
+//  box-shadow: none !important;
+//}
+//.team-table-head {
+//  padding: 0px;
+//  margin: 30px 0 20px;
+//}
 /*Modal*/
 
-.modal-team{
-  width: 600px !important;
-}
-.form-group{
-  margin: 10px 0;
-  padding: 0;
-}
 
-.add-team-member{
+.add-team-member {
   display: flex;
   justify-content: space-between;
-
 }
-.member-add-box{
+.member-add-box {
   width: 60%;
 }
-.member-add-box:focus{
-  outline: 0;
-  box-shadow: none;
+.member-add-box:focus {
+  outline: 0 !important;
+  box-shadow: none !important;
 }
-.no-team{
+.no-team {
   padding: 100px;
   text-align: center;
   color: blue;
   font-weight: bold;
 }
 
-@media (min-width:767.8px)and (max-width:991px){
+
+.chartjs-render-monitor label{
+  color: transparent;
+  background-color: #0c0c0c;
+}
 .pie{
-  width: 250px !important;
+  width: 350px !important;
   margin: 0 auto;
-  height: 250px !important;
+  height: 400px !important;
 }
+#doughnut-chart {
+  width: 350px !important;
+  margin: 0 auto;
+  height: 350px !important;
 }
+
+@media (min-width:1000px) and (max-width: 1399px) {
+  .pie[data-v-144a9a4f] {
+    width: 250px !important;
+    margin: 0 auto;
+    height: 250px !important;
+  }
+  #doughnut-chart {
+    width: 220px !important;
+    height: 220px !important;
+    margin: 0;
+    padding: 0;
+  }
+}
+
 </style>

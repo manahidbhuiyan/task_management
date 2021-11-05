@@ -1,0 +1,99 @@
+.create{
+  /*height: calc(100vh - 400px);*/
+  min-height: 60vh;
+  margin: 60px 0;
+}
+.create-task {
+  margin: 10px;
+  border: 1px solid #737373;
+  border-radius: 10px;
+  padding: 10px;
+  background-color: white;
+  box-shadow: 0px 2px 4px #3B3A3A;
+}
+
+.create-task h5 , .create-task h3{
+  padding: 0 !important;
+  color: #716e6e;
+  margin-bottom: 0px !important;
+}
+.add-task:focus {
+  box-shadow: none;
+  outline: 0;
+}
+
+.addbutton {
+  margin: 10px;
+
+}
+
+.addbutton:focus {
+  outline: 0;
+  box-shadow: none;
+}
+
+.create-task .task-input {
+  width: 100%;
+  border: none;
+  background-color: transparent;
+}
+
+.create-task .task-input:focus {
+  outline: 0;
+}
+
+.arrow-right {
+  transform: rotate(90deg);
+}
+.daterange{
+  width: 100% ;
+  text-align: left;
+}
+.datestyle{
+  padding: 5px 5px;
+  border: 1px solid #6e6a6a;
+  font-size: 12px;
+}
+.datasetup{
+  border-right:1px solid #373535;
+  display: flex;
+  justify-content: space-between;
+}
+.border-design{
+  border-right: 1px solid black;
+}
+.border-design:last-child{
+  border: none;
+}
+.todo-item-done{
+  background-color: #a3eaa3;
+}
+.modify btn{
+  color: black;
+  font-size: 15px;
+}
+
+/*Responsive*/
+
+@media (min-width:576px)and (max-width:991px) {
+  .datasetup{
+    justify-content: flex-start;
+  }
+  .border-design{
+    border-right: none;
+    border-bottom: 1px solid black;
+    padding: 5px ;
+  }
+}
+
+@media (max-width:575.8px){
+  .datasetup{
+    justify-content: flex-start;
+  }
+  .border-design{
+    border-right: none;
+    border-bottom: 1px solid black;
+    padding: 5px ;
+  }
+
+}

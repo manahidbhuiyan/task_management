@@ -68,7 +68,7 @@
                     </div>
                     <div class="col-md-3">
                       <p>Department : Web</p>
-                      <button type="button"  block v-b-toggle.accordion-3 variant="info" class="btn btn-primary">View Details</button>
+                      <button type="button"  block v-b-toggle.accordion-3 class="btn common-btn">View Details</button>
                     </div>
                   </div>
                 </b-card-header>
@@ -87,7 +87,7 @@
                         <div class="col-md-3">Employee</div>
                         <div class="col-md-3">
                           <div class="acc-btn">
-                            <button type="button"  block v-b-toggle.accordion-4 variant="info" class="btn btn-primary">View Details</button>
+                            <button type="button"  block v-b-toggle.accordion-4 class="btn common-btn">View Details</button>
                           </div>
                         </div>
                       </div>
@@ -97,7 +97,7 @@
                         <div class="col-md-3">Senior Officer</div>
                         <div class="col-md-3">
                           <div class="acc-btn">
-                            <button type="button"  block v-b-toggle.accordion-4 variant="info" class="btn btn-primary">View Details</button>
+                            <button type="button"  block v-b-toggle.accordion-4 class="btn common-btn">View Details</button>
                           </div>
                         </div>
                       </div>
@@ -107,7 +107,7 @@
                         <div class="col-md-3">Jusnior Officer</div>
                         <div class="col-md-3">
                           <div class="acc-btn">
-                            <button type="button"  block v-b-toggle.accordion-4 variant="info" class="btn btn-primary">View Details</button>
+                            <button type="button"  block v-b-toggle.accordion-4 class="btn common-btn">View Details</button>
                           </div>
                         </div>
                       </div>
@@ -117,7 +117,7 @@
                         <div class="col-md-3">Employee</div>
                         <div class="col-md-3">
                           <div class="acc-btn">
-                            <button type="button"  block v-b-toggle.accordion-4 variant="info" class="btn btn-primary">View Details</button>
+                            <button type="button"  block v-b-toggle.accordion-4  class="btn common-btn">View Details</button>
                           </div>
                         </div>
                       </div>
@@ -228,7 +228,10 @@ name: "LeadDashboard",
 }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
+
+@import '../../scss/index';
+
 .headDash{
   padding: 20px 0;
 }
@@ -287,7 +290,6 @@ name: "LeadDashboard",
     height: 250px !important;
   }
   .bar-area , .pie-area{
-
     margin: 10px 0;
     padding: 10px;
   }

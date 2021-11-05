@@ -19,12 +19,13 @@ import Teams from "../views/common/Teams";
 import Tearms from "../views/about-site/Tearms";
 import Privacy from "../views/about-site/Privacy";
 import About from "../views/about-site/About";
-import Setting from "@/views/about-site/Setting";
+import Setting from "../views/about-site/Setting";
+import CreateTeam from "../views/personal/CreateTeam";
+import CreateProject from "../views/personal/CreateProject";
 
 Vue.use(VueRouter)
 
-const routes = [
-  {
+const routes = [{
     path: '/',
     name: 'default',
     component: () => import("../views/register/Login")
@@ -129,6 +130,16 @@ const routes = [
     path: '/setting & privacy',
     name: Setting,
     component: Setting
+  },
+  {
+    path: '/create-project',
+    name: CreateProject,
+    component: CreateProject
+  },
+  {
+    path: '/create-team',
+    name: CreateTeam,
+    component: CreateTeam
   }
 
 

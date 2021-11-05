@@ -1,4 +1,6 @@
-import { Doughnut } from "vue-chartjs";
+import {
+    Doughnut
+} from "vue-chartjs";
 export default {
     extends: Doughnut,
     props: ["data", "options"],
@@ -9,12 +11,12 @@ export default {
             borderWidth: "10px",
             hoverBackgroundColor: "red",
             hoverBorderWidth: "10px",
-        //     responsive: true,
-        //     maintainAspectRatio: false,
-        //     pieceLabel: {
-        //     mode: 'percentage',
-        //         precision: 1
-        // }
+            //     responsive: true,
+            //     maintainAspectRatio: false,
+            //     pieceLabel: {
+            //     mode: 'percentage',
+            //         precision: 1
+            // }
 
         });
 

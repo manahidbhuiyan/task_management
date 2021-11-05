@@ -1,26 +1,24 @@
 <template>
-<div>
-  <sidebar></sidebar>
-  <navbar/>
-  <div class="container mb-5">
-    <div class="body">
-    <h3>Notifications</h3>
-    <div class="head">
-      <a @click="new_show"> New </a>
-      <a @click="all_show"> All </a>
+  <div>
+    <sidebar></sidebar>
+    <navbar />
+    <div class="container mb-5">
+      <div class="body">
+        <h3>Notifications</h3>
+        <div class="head">
+          <a @click="new_show"> New </a>
+          <a @click="all_show"> All </a>
+        </div>
+      </div>
+
+      <New_Notification v-bind:class="{ 'new-not-show': done }" />
+      <All_Notification v-bind:class="{ 'all-not-show': none }" />
     </div>
+    <Footer></Footer>
   </div>
-
-  <New_Notification  v-bind:class="{'new-not-show' : done}" />
-  <All_Notification  v-bind:class="{'all-not-show' : none}"/>
-
-</div>
-  <Footer></Footer>
-</div>
 </template>
 
 <script>
-
 import Sidebar from "../../components/Sidebar";
 import Navbar from "../../components/navbar";
 import New_Notification from "../notification/New_Notification";
@@ -33,55 +31,55 @@ export default {
     All_Notification,
     Navbar,
     Sidebar,
-    Footer
+    Footer,
   },
-  data(){
-return{
-  done : false,
-  none : true
-}
+  data() {
+    return {
+      done: false,
+      none: true,
+    };
   },
-  methods:{
-    new_show(){
-      this.done = false
-      this.none = true
+  methods: {
+    new_show() {
+      this.done = false;
+      this.none = true;
     },
-    all_show(){
-      this.none = false
-      this.done = true
-    }
-  }
-
-}
-
+    all_show() {
+      this.none = false;
+      this.done = true;
+    },
+  },
+};
 </script>
 
-<style scoped>
-.new-not-show{
+<style lang="scss" scoped>
+@import "../../scss/index";
+
+.new-not-show {
   display: none;
 }
-.all-not-show{
+.all-not-show {
   display: none;
 }
-.body{
+.body {
   margin: 50px 0;
   padding: 0 12px;
 }
-.head{
+.head {
   display: flex;
 }
 .head a {
   color: white;
   margin-left: 20px;
-  color: #3B3A3A;
+  color: #3b3a3a;
   text-decoration: none;
   padding: 5px;
   cursor: pointer;
 }
-.head a:first-child{
+.head a:first-child {
   margin-left: 0;
 }
-.head a:hover{
+.head a:hover {
   border-bottom: 1px solid #37a7e3;
 }
 </style>
